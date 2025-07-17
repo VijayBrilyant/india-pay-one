@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+}
+
+@theme{
+  --color-primary:#0071dc;
+  --color-secondary:#ffc221;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +26,9 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-black{
+ background-image:linear-gradient(12deg, black, #000000d4, rgb(0 0 0 / 10%), rgb(0 0 0 / 0%)); 
 }

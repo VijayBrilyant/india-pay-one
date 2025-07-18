@@ -5,67 +5,10 @@ import Section from '@/components/section'
 import imgs from '../public/assets/banner/banner1.jpeg'
 import Image from 'next/image'
 import SwiperSliderSlice from '@/components/swiper-slider-slice'
+import { getBusinessSolutions } from '@/components/services'
+import { ServiceIntg } from '@/types/globel'
 
 const Page = () => {
-
-  const business_solutions = [
-    {
-      id: 1,
-      name: 'Utility Payments',
-      define: 'We make everyday utility payments smarter, faster, and more reliable. Through our secure digital platform, users can manage essential services such as electricity, water, gas, broadband, and mobile recharges—all in one place. Our goal is to bring convenience, transparency, and real-time control to the fingertips of our customers, whether they are individuals or businesses.',
-      key_features: [
-        'Multi-utility bill payment system',
-        'Real-time payment confirmations',
-        'Secure and encrypted transactions',
-        'Integrated support for recurring billing and reminders'
-      ]
-    },
-    {
-      id: 2,
-      name: 'Business Solutions',
-      define: 'Our business solutions are designed to empower organizations to operate more efficiently in a digital-first world. We offer customized tools and services including cloud-based software, process automation, customer management systems (CRM), invoicing platforms, and analytics dashboards. We partner with businesses to streamline operations, reduce costs, and foster sustainable growth.',
-      key_features: [
-        'Enterprise resource planning (ERP) solutions',
-        'Custom software development',
-        'Cloud and IT infrastructure support',
-        'Data analytics and performance monitoring'
-      ]
-    },
-    {
-      id: 3,
-      name: 'E-commerce',
-      define: 'Our business solutions are designed to empower organizations to operate more efficiently in a digital-first world. We offer customized tools and services including cloud-based software, process automation, customer management systems (CRM), invoicing platforms, and analytics dashboards. We partner with businesses to streamline operations, reduce costs, and foster sustainable growth.',
-      key_features: [
-        'E-commerce website and mobile app development',
-        'Secure payment gateway integration',
-        'Product catalog and inventory management',
-        'Logistics and fulfillment coordination'
-      ]
-    },
-    {
-      id: 4,
-      name: 'Retail Market',
-      define: 'Our business solutions are designed to empower organizations to operate more efficiently in a digital-first world. We offer customized tools and services including cloud-based software, process automation, customer management systems (CRM), invoicing platforms, and analytics dashboards. We partner with businesses to streamline operations, reduce costs, and foster sustainable growth.',
-      key_features: [
-        'Point-of-sale (POS) solutions',
-        'Inventory and supply chain management',
-        'Loyalty and customer engagement programs',
-        'Omnichannel retail support'
-      ]
-    },
-    {
-      id: 5,
-      name: 'Sales and Development',
-      define: 'Our sales and development services are focused on helping businesses identify new markets, drive customer acquisition, and build sustainable revenue models. We provide both strategic consulting and hands-on execution in areas such as market research, product development, brand positioning, and channel sales optimization.',
-      key_features: [
-        'Go-to-market strategy planning',
-        'Lead generation and B2B/B2C sales support',
-        'Product innovation and lifecycle management',
-        'Business development partnerships'
-      ]
-    }
-  ]
-
 
   const testimonial = [
     {
@@ -92,9 +35,9 @@ const Page = () => {
 
   const testimonialElements = testimonial ? testimonial.map((testimonial, index) => (
     <div className='bg-slate-50 rounded-[10px] overflow-hidden w-full relative p-5' key={index}>
-      <div className='h-4 w-4 rounded-full bg-gray-50' />
-      <p>{testimonial.name || '---'}</p>
-      <p className='text-[13px] mt-5 text-slate-500'>{testimonial.message || '---'}</p>
+      <div className='h-10 w-10 rounded-full bg-gray-200' />
+      <p className=''>{testimonial.name || '---'}</p>
+      <p className='text-[13px] mt-3 text-slate-500'>{testimonial.message || '---'}</p>
     </div>
   )) : null;
 
@@ -159,7 +102,7 @@ const Page = () => {
           </div>
 
           {
-            business_solutions?.map((item, index) => (
+            getBusinessSolutions().map((item:ServiceIntg, index:number) => (
               <div className='md:col-span-1 col-span-5 group' key={index}>
                 <div className='h-[260px] w-full bg-slate-50 rounded-[10px] overflow-hidden relative card-mod:hover.'>
                   <div className='gradient-black h-full w-full absolute top-0 left-0 z-10' />
@@ -169,16 +112,101 @@ const Page = () => {
               </div>
             ))
           }
-
-
         </div>
       </Section>
 
 
+      {/* Promo section */}
+      <Section className="w-full py-8">
+        <div className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-3xl overflow-hidden">
+          {/* Background decorative lines */}
+          <div className="absolute inset-0 opacity-20">
+            <svg className="w-full h-full" viewBox="0 0 1200 400" fill="none">
+              <path d="M0 200 Q300 100 600 200 T1200 200" stroke="white" strokeWidth="2" fill="none" />
+              <path d="M0 250 Q400 150 800 250 T1600 250" stroke="white" strokeWidth="1.5" fill="none" />
+              <path d="M-200 150 Q200 50 600 150 T1400 150" stroke="white" strokeWidth="1" fill="none" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 sm:p-12 lg:p-16">
+            {/* Left side - Text content */}
+            <div className="text-center lg:text-left space-y-6">
+              <div className="space-y-4">
+                <h2 className="text-white text-lg sm:text-xl font-normal">
+                  Are You Impressed With Us?
+                </h2>
+                <h1 className="text-white text-3xl sm:text-4xl lg:text-4xl font-bold leading-tight">
+                  We need you as our <br />
+                  business partner
+                </h1>
+              </div>
+
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-4 rounded-xl transition-colors duration-300 text-lg">
+                Join Now
+              </button>
+            </div>
+
+            {/* Right side - Laptop mockup */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Laptop base */}
+                <div className="bg-gray-300 rounded-b-3xl w-80 h-6 shadow-lg"></div>
+
+                {/* Laptop screen */}
+                <div className="bg-gray-800 rounded-t-2xl p-4 w-80 relative -mb-1">
+                  {/* Screen bezel */}
+                  <div className="bg-white rounded-lg p-4 h-48 relative overflow-hidden">
+                    {/* Browser chrome */}
+                    <div className="flex items-center space-x-2 mb-4">
+                      <div className="flex space-x-1">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                      <div className="flex-1 bg-gray-100 rounded px-3 py-1 text-xs text-gray-500">
+                        India One Pay
+                      </div>
+                    </div>
+
+                    {/* Free badge */}
+                    <div className="absolute top-8 left-8 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                      Join now
+                    </div>
+
+                    {/* Content area */}
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-1">
+                          <h3 className="text-sm font-bold text-gray-900 mb-1">
+                            We give you exciting features to make you save money and earn more benefits.
+                          </h3>
+                          <div className="space-y-1">
+                            <div className="bg-blue-500 h-2 w-16 rounded"></div>
+                            <div className="bg-gray-200 h-1 w-12 rounded"></div>
+                            <div className="bg-gray-200 h-1 w-20 rounded"></div>
+                          </div>
+                        </div>
+
+                        {/* Video thumbnail */}
+                        <div className="relative bg-gray-900 rounded w-20 h-12 flex items-center justify-center">
+                          <div className="w-0 h-0 border-l-4 border-l-red-500 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-1"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 opacity-20 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       <Section className='grid md:grid-cols-7 grid-cols-1 gap-5 my-20'>
         <div className='md:col-span-2 col-span-1'>
-            <Section_Header title='What Our Learners Say'
-             sub_content='People love India One Pay, so do you. Because this is the All-in-one solution for any Online studying, eLearning center.'  />
+          <Section_Header title='What Our Learners Say'
+            sub_content='' />
+          <p className='text-[14px] text-slate-500'>People love India One Pay, so do you. Because this is the All-in-one solution for any Online studying, eLearning center.</p>
         </div>
 
         <div className='md:col-span-5 col-span-1'>

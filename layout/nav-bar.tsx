@@ -15,7 +15,7 @@ const Nav_Bar = () => {
     useEffect(() => {
         const handleScroll = () => {
             console.log('scroll position:', window.scrollY)
-            setIsScrolled(window.scrollY > 500)
+            setIsScrolled(window.scrollY > (pathname === '/' ? 500 : 200))
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -32,11 +32,11 @@ const Nav_Bar = () => {
     return (
         <>
             <div
-                className={`fixed flex items-center justify-between  top-0 left-0 w-full z-[1111] transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-md md:px-36 px-7' : 'bg-transparent text-white md:px-10 px-7'
+                className={`fixed flex items-center justify-between  top-0 left-0 w-full z-[1111] transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-md md:px-36 px-7' : `bg-transparent  ${pathname === '/' ? 'text-white' : 'text-black'} md:px-10 px-7`
                     }`}
             >
                 <div className='logo py-3'>
-                    <h1 className='text-[18px]'>India One Pay.</h1>
+                    <h1 className='text-[18px]'><span className='text-primary'>India</span> One Pay.</h1>
                 </div>
 
                 <div className='md:flex hidden gap-12  py-5'>

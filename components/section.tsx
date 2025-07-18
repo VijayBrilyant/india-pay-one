@@ -6,7 +6,7 @@ interface Props{
 }
 
 const Section:React.FC<Props> = ({children, className=''}) => {
-  return  <div className={`md:px-40 px-10 ${className}`}> {children} </div> ;
+  return  <div className={`md:px-40 px-5 ${className}`}> {children} </div> ;
 }
 
 export default Section

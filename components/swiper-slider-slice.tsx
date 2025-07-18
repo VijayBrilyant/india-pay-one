@@ -18,7 +18,7 @@ const SwiperSliderSlice: React.FC<Props> = ({ slides, slidesPerView, pagination,
     <Swiper
       spaceBetween={50}
       modules={[Pagination, Autoplay]}
-      pagination={pagination}
+      pagination={pagination ? { clickable: true } : false}
       autoplay={{
         delay: 200000,
         disableOnInteraction: true,

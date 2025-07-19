@@ -7,13 +7,14 @@ import Button      from "@/components/button";
 import Image       from "next/image";
 import { getBusinessSolutions } from "@/components/services";
 import type { ServiceIntg } from "@/types/globel";
+import { useRouter } from "next/navigation";
 
 /* ---------- Service page ---------- */
 const Service = () => {
   /* which card is open; null = none */
   const [openId,   setOpenId]   = useState<number | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-
+const navigate = useRouter()
   const services = getBusinessSolutions();          // call once
 
   /* === Card Components =================================================== */
@@ -23,8 +24,9 @@ const Service = () => {
       <div className="bg-white relative rounded-lg shadow-sm hover:shadow-md
                       transition-shadow duration-300 overflow-hidden">
         {/* thumbnail */}
-        <div className="relative h-48">
-          <Image src={service.image} alt={service.name} fill className="object-cover"/>
+        <div className="relative h-56">
+          <Image src={service.image} alt={service.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  className="h-full w-full object-cover"/>
         </div>
 
         {/* summary */}
@@ -41,7 +43,7 @@ const Service = () => {
 
           <Button
             className="bg-primary px-5 py-1.5 !text-[13px] mt-3"
-            onClick={() => console.log("clicked")}
+            onClick={() => navigate.push('/contact-us')}
           >
             Get an Enquiry
           </Button>
@@ -89,7 +91,7 @@ const Service = () => {
             {service.define}
           </p>
           <Button className="bg-primary px-5 py-1.5 !text-[13px]"
-                  onClick={() => console.log("clicked")}>
+                  onClick={() => navigate.push('/contact-us')}>
             Get an Enquiry
           </Button>
         </div>

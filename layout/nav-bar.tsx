@@ -14,7 +14,6 @@ const Nav_Bar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log('scroll position:', window.scrollY)
             setIsScrolled(window.scrollY > (pathname === '/' ? 500 : 200))
         }
 

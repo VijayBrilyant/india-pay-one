@@ -4,7 +4,8 @@ import SwiperSliderSlice from './swiper-slider-slice'
 import { useRouter } from 'next/navigation'
 import { BannerProp } from '@/types/globel';
 import banner1 from '../public/assets/banner/banner1.jpeg';
-import banner2 from '../public/assets/banner/banner2.jpeg';
+import banner3 from '../public/assets/banner/banner3.jpg';
+import banner4 from '../public/assets/banner/banner4.jpg';
 import Image from 'next/image';
 import Button from './button';
 import { MoveRight } from 'lucide-react';
@@ -14,23 +15,23 @@ const Banner = () => {
     const bannerContent: BannerProp[] = [
         {
             id: 1,
-            header: 'At India Pay One',
-            subcontent: (<> We specialize in <span className="text-primary">delivering</span> innovative</>),
+            header: 'Welcome to INDIA ONE PAY Payment service!',
+            subcontent: (<> Grow your <span className="text-primary">business</span> in a new way</>),
             bannerImg: { image: banner1, alt: 'banner 1' },
             action: () => navigate.push('/about')
         },
         {
             id: 2,
-            header: 'Our diverse portfolio reflects',
-            subcontent: (<>Our commitment to <span className="text-primary">simplifying</span>  everyday </>),
-            bannerImg: { image: banner2, alt: 'banner 2' },
+            header: 'Visit our outlet to Experience the hassle free service',
+            subcontent: (<>Money transfer to any  <span className="text-primary">bank account</span> </>),
+            bannerImg: { image: banner3, alt: 'banner 2' },
             action: () => navigate.push('#')
         },
         {
             id: 3,
-            header: 'Processes, accelerating business growth',
-            subcontent: (<>Enhancing consumer <span className="text-primary">experiences</span>  across multiple industries.</>),
-            bannerImg: { image: banner1, alt: 'banner 1' },
+            header: 'We provide Banking & Recharge services',
+            subcontent: (<>All type of <span className="text-primary">recharge</span> available</>),
+            bannerImg: { image: banner4, alt: 'banner 1' },
             action: () => navigate.push('#')
         }
     ]
@@ -51,9 +52,11 @@ const Banner = () => {
 
             <Image
                 src={banner.bannerImg?.image}
-                alt={banner.bannerImg?.alt}
+                alt={banner.bannerImg?.alt || 'Home Banner'}
+                fill
                 priority
-                className='object-cover h-full w-full'
+                sizes="100vw"
+                className="object-cover"
             />
             <div className='absolute top-0 left-0 h-full w-full bg-black opacity-60' />
         </div>

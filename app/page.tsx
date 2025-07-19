@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Banner from '../components/banner'
 import Section_Header from '@/components/section-header'
@@ -7,9 +8,11 @@ import Image from 'next/image'
 import SwiperSliderSlice from '@/components/swiper-slider-slice'
 import { getBusinessSolutions } from '@/components/services'
 import { ServiceIntg } from '@/types/globel'
+import Button from '@/components/button'
+import { useRouter } from 'next/navigation'
 
 const Page = () => {
-
+const navigate = useRouter();
   const testimonial = [
     {
       id: 1,
@@ -106,7 +109,7 @@ const Page = () => {
               <div className='md:col-span-1 col-span-5 group' key={index}>
                 <div className='h-[260px] w-full bg-slate-50 rounded-[10px] overflow-hidden relative card-mod:hover.'>
                   <div className='gradient-black h-full w-full absolute top-0 left-0 z-10' />
-                  <Image src={imgs} alt='cat-imgs' className='h-full w-full object-cover absolute top-0 left-0 transition-transform duration-500 group-hover:scale-110' />
+                  <Image src={item.image} fill alt='cat-imgs' className='h-full w-full object-cover absolute top-0 left-0 transition-transform duration-500 group-hover:scale-110'  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <h5 className='text-white transition-all duration-500 group-hover:text-secondary absolute bottom-4  left-2.5 z-[11] font-[600] text-[14px]'>{item.name}</h5>
                 </div>
               </div>
@@ -117,7 +120,7 @@ const Page = () => {
 
 
       {/* Promo section */}
-      <Section className="w-full py-8">
+      <Section className="w-full py-4">
         <div className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-3xl overflow-hidden">
           {/* Background decorative lines */}
           <div className="absolute inset-0 opacity-20">
@@ -128,7 +131,7 @@ const Page = () => {
             </svg>
           </div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 sm:p-12 lg:p-16">
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center px-8 sm:px-12 lg:px-16 py-8 sm:py-12 lg:py-9">
             {/* Left side - Text content */}
             <div className="text-center lg:text-left space-y-6">
               <div className="space-y-4">
@@ -141,9 +144,9 @@ const Page = () => {
                 </h1>
               </div>
 
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-4 rounded-xl transition-colors duration-300 text-lg">
+              <Button onClick={()=> navigate.push('/contact-us')} className="bg-secondary hover:bg-secondary/90 text-gray-900 font-semibold px-8 py-2 rounded-[5px] transition-colors duration-300 text-lg">
                 Join Now
-              </button>
+              </Button>
             </div>
 
             {/* Right side - Laptop mockup */}
@@ -204,7 +207,7 @@ const Page = () => {
 
       <Section className='grid md:grid-cols-7 grid-cols-1 gap-5 my-20'>
         <div className='md:col-span-2 col-span-1'>
-          <Section_Header title='What Our Learners Say'
+          <Section_Header title='People Trust Us'
             sub_content='' />
           <p className='text-[14px] text-slate-500'>People love India One Pay, so do you. Because this is the All-in-one solution for any Online studying, eLearning center.</p>
         </div>

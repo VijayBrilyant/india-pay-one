@@ -1,4 +1,8 @@
-import image1 from '../public/assets/banner/banner1.jpeg'
+import utility_payment from '../public/assets/service/utility-payment.avif'
+import e_commerce from '../public/assets/service/e-commerce.avif'
+import retail_market from '../public/assets/service/retail-market.avif'
+import sales_development from '../public/assets/service/sales-and-development.avif'
+import business_solution from '../public/assets/service/business-solution.avif'
 import { ServiceIntg } from '@/types/globel'
 
 export const getBusinessSolutions = (): ServiceIntg[] => {
@@ -6,7 +10,7 @@ export const getBusinessSolutions = (): ServiceIntg[] => {
         {
             id: 1,
             name: 'Utility Payments',
-            image:image1,
+            image:utility_payment,
             define: 'We make everyday utility payments smarter, faster, and more reliable. Through our secure digital platform, users can manage essential services such as electricity, water, gas, broadband, and mobile recharges—all in one place. Our goal is to bring convenience, transparency, and real-time control to the fingertips of our customers, whether they are individuals or businesses.',
             key_features: [
                 'Multi-utility bill payment system',
@@ -18,7 +22,7 @@ export const getBusinessSolutions = (): ServiceIntg[] => {
         {
             id: 2,
             name: 'Business Solutions',
-            image:image1,
+            image:business_solution,
             define: 'Our business solutions are designed to empower organizations to operate more efficiently in a digital-first world. We offer customized tools and services including cloud-based software, process automation, customer management systems (CRM), invoicing platforms, and analytics dashboards. We partner with businesses to streamline operations, reduce costs, and foster sustainable growth.',
             key_features: [
                 'Enterprise resource planning (ERP) solutions',
@@ -30,7 +34,7 @@ export const getBusinessSolutions = (): ServiceIntg[] => {
         {
             id: 3,
             name: 'E-commerce',
-            image:image1,
+            image:e_commerce,
             define: "We provide end-to-end e-commerce solutions that help brands launch, manage, and scale their online presence. Whether you're a startup or an established retailer, our digital commerce solutions enable you to connect with customers, manage inventory, and process transactions with ease.",
             key_features: [
                 'E-commerce website and mobile app development',
@@ -42,7 +46,7 @@ export const getBusinessSolutions = (): ServiceIntg[] => {
         {
             id: 4,
             name: 'Retail Market',
-            image:image1,
+            image:retail_market,
             define: "We support the modern retail landscape with a combination of digital tools and traditional commerce insights. From small retailers to large marketplaces, we enable retailers to optimize operations, personalize customer experiences, and stay competitive in both physical and digital environments.",
             key_features: [
                 'Point-of-sale (POS) solutions',
@@ -54,7 +58,7 @@ export const getBusinessSolutions = (): ServiceIntg[] => {
         {
             id: 5,
             name: 'Sales and Development',
-            image:image1,
+            image:sales_development,
             define: 'Our sales and development services are focused on helping businesses identify new markets, drive customer acquisition, and build sustainable revenue models. We provide both strategic consulting and hands-on execution in areas such as market research, product development, brand positioning, and channel sales optimization.',
             key_features: [
                 'Go-to-market strategy planning',

@@ -2,7 +2,7 @@ import { MoveRight } from 'lucide-react';
 import React, { ReactNode } from 'react'
 
 interface ButtonProps {
-    onClick: () => void;
+    onClick?: () => void;
     className?: string;
     type?: "button" | "submit" | "reset" | undefined;
     children:ReactNode

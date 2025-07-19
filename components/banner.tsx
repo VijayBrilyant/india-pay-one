@@ -18,21 +18,21 @@ const Banner = () => {
             header: 'Welcome to INDIA ONE PAY Payment service!',
             subcontent: (<> Grow your <span className="text-primary">business</span> in a new way</>),
             bannerImg: { image: banner1, alt: 'banner 1' },
-            action: () => navigate.push('/about')
+            action: () => navigate.push('/contact-us')
         },
         {
             id: 2,
             header: 'Visit our outlet to Experience the hassle free service',
             subcontent: (<>Money transfer to any  <span className="text-primary">bank account</span> </>),
             bannerImg: { image: banner3, alt: 'banner 2' },
-            action: () => navigate.push('#')
+            action: () => navigate.push('/contact-us')
         },
         {
             id: 3,
             header: 'We provide Banking & Recharge services',
             subcontent: (<>All type of <span className="text-primary">recharge</span> available</>),
             bannerImg: { image: banner4, alt: 'banner 1' },
-            action: () => navigate.push('#')
+            action: () => navigate.push('/contact-us')
         }
     ]
 

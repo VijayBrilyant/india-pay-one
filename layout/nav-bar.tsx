@@ -19,7 +19,7 @@ const Nav_Bar = () => {
 
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    }, [pathname])
 
     const nav_menus = [
         { id: 1, title: 'Home', link: '/' },

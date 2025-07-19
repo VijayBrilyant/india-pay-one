@@ -14,7 +14,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ name, items }) => {
   return (
-    <div className='bg-slate-50 mt-16 px-40 py-16'>
+    <div className='bg-slate-50 mt-16 md:px-40  px-5 py-16'>
       <div className="flex items-center space-x-2 text-sm text-gray-600">
         <ChevronRight strokeWidth={1.5} size={18}/>
         {items.map((item, index) => (
@@ -35,7 +35,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ name, items }) => {
       </div>
 
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <h1 className="text-2xl md:text-5xl font-bold text-gray-900">
           {name}
         </h1>
       </div>

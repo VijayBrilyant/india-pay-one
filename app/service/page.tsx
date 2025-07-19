@@ -118,7 +118,7 @@ const navigate = useRouter()
             </h1>
 
             {/* view toggle */}
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">See</span>
               <div className="flex bg-white border rounded-lg p-1">
                 <button
@@ -142,7 +142,7 @@ const navigate = useRouter()
                   <List size={16} />
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* list or grid */}

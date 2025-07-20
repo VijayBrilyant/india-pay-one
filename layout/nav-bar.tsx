@@ -24,7 +24,7 @@ const Nav_Bar = () => {
     const nav_menus = [
         { id: 1, title: 'Home', link: '/' },
         { id: 2, title: 'About us', link: '/about' },
-        { id: 3, title: 'Service', link: '/service' },
+        { id: 3, title: 'Services', link: '/services' },
         { id: 4, title: 'Contact us', link: '/contact-us' }
     ]
 

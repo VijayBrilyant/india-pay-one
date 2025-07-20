@@ -104,7 +104,7 @@ const navigate = useRouter()
     <>
       <Breadcrumb
         name="Services We Provide"
-        items={[{ label: "Home", href: "/" }, { label: "Service" }]}
+        items={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
       <Section>

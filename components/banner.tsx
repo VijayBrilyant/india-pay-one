@@ -15,14 +15,14 @@ const Banner = () => {
     const bannerContent: BannerProp[] = [
         {
             id: 1,
-            header: 'Welcome to INDIA ONE PAY Payment service!',
+            header: 'Welcome to INDIA ONE PAY payment service!',
             subcontent: (<> Grow your <span className="text-primary">business</span> in a new way</>),
             bannerImg: { image: banner1, alt: 'banner 1' },
             action: () => navigate.push('/contact-us')
         },
         {
             id: 2,
-            header: 'Visit our outlet to Experience the hassle free service',
+            header: 'Visit our outlet to experience the hassle free service',
             subcontent: (<>Money transfer to any  <span className="text-primary">bank account</span> </>),
             bannerImg: { image: banner3, alt: 'banner 2' },
             action: () => navigate.push('/contact-us')
@@ -40,7 +40,7 @@ const Banner = () => {
         <div className='md:h-[95vh] h-[50vh] w-full relative' key={index}>
             <div className='z-10 h-max md:w-[70%] w-[95%] text-white absolute top-7/12  md:left-20 left-5 transform -translate-y-2/4'>
                 <p className='mb-1 font-[500] fade-in' style={{ letterSpacing: '5px' }}>{banner.header}</p>
-                <h2 className='md:text-[85px] text-[35px] md:leading-19  leading-9 font-[800]'>{banner.subcontent}</h2>
+                <h2 className='md:text-[85px] text-[35px] md:leading-24  leading-9 font-[800]'>{banner.subcontent}</h2>
 
                 <Button onClick={() => banner.action()} className='bg-primary pl-4 pr-2 py-1 mt-12 rounded-full relative flex justify-between items-center gap-x-7'>
                     Get Started

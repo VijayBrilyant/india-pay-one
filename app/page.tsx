@@ -3,7 +3,7 @@ import React from 'react'
 import Banner from '../components/banner'
 import Section_Header from '@/components/section-header'
 import Section from '@/components/section'
-import imgs from '../public/assets/banner/banner1.jpeg'
+import imgs from '../public/assets/with-tech.jpeg'
 import Image from 'next/image'
 import SwiperSliderSlice from '@/components/swiper-slider-slice'
 import { getBusinessSolutions } from '@/components/services'
@@ -213,7 +213,7 @@ const navigate = useRouter();
         </div>
 
         <div className='md:col-span-5 col-span-1'>
-          <SwiperSliderSlice slides={testimonialElements} slidesPerView={3} pagination={true} infinitescroll={true} />
+          <SwiperSliderSlice slides={testimonialElements} slidesPerView={3} pagination={false} infinitescroll={true} />
         </div>
       </Section>
 

@@ -78,8 +78,8 @@ const Footer = () => {
               </li>
 
                <li>
-                <Link href="/service" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Service
+                <Link href="/services" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  Services
                 </Link>
               </li>
 
@@ -121,9 +121,7 @@ const Footer = () => {
             
             {/* Right side - Copyright */}
             <div className="flex items-center text-sm text-gray-600">
-              <span>© 2025 India One Pay,  Made with </span>
-              <Heart className="w-4 h-4 text-red-500 mx-1 fill-current" />
-              <span> by unicuscore</span>
+              <span>© 2025 India One Pay,  Made by unicuscore</span> 
             </div>
           </div>
         </div>
